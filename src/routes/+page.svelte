@@ -1,5 +1,5 @@
 <script>
-	import VideoCard from '$lib/VideoCard.svelte';
+	import VideoCard from '$lib/components/VideoCard.svelte';
 
 	let query = '';
 	$: searchResults = [];
@@ -11,7 +11,6 @@
 	};
 
 	const searchCallback = () => {
-		console.log(query);
 		let data = getSearchResults(query);
 		searchResults = data;
 	};

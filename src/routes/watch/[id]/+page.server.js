@@ -8,7 +8,6 @@ export async function load({ params }) {
 		quality: 'highestaudio',
 		filter: 'audioandvideo'
 	});
-	console.log(format);
 
 	return format;
 }
