@@ -1,5 +1,4 @@
-import pkg from 'youtubei.js';
-const { Innertube } = pkg;
+import Innertube from 'youtubei.js';
 import { json } from '@sveltejs/kit';
 
 /** @type {import('./$types').RequestHandler} */
@@ -17,5 +16,5 @@ export async function GET({ url }) {
 	// );
 	data = data.results.filter((result) => result.type == 'Video');
 
-	return new json(data);
+	return json(data);
 }

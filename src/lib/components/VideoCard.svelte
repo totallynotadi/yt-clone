@@ -23,7 +23,7 @@
 <div class="video-card">
 	<div class="fluid-row gap">
 		<img src={videoData.thumbnails[0].url} alt="" />
-		<div class="fluid-column justify-between ">
+		<div class="fluid-column justify-between">
 			<div>
 				<div class="video-title">
 					{videoData.title.text}
@@ -42,9 +42,11 @@
 			<div class="channel-title">
 				{videoData.author.name}
 			</div>
-			<div class="description">
-				{@html videoData.description_snippet}
-			</div>
+			{#if videoData.description_snippet}
+				<div class="description">
+					{@html videoData.description_snippet}
+				</div>
+			{/if}
 		</div>
 	</div>
 </div>

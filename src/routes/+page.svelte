@@ -1,5 +1,6 @@
 <script>
 	import VideoCard from '$lib/components/VideoCard.svelte';
+	import { goto } from '$app/navigation';
 
 	let query = '';
 	$: searchResults = [];
@@ -33,9 +34,15 @@
 
 	{#if searchResults.length > 0}
 		{#each searchResults as result}
-			<a href="/watch/{result.id}" style:width="90%">
+			<div
+				on:click={() => {
+					goto(`/watch/${result.id}`);
+				}}
+				on:keypress={() => {}}
+				style:width="90%"
+			>
 				<VideoCard videoData={result} />
-			</a>
+			</div>
 		{/each}
 	{:else}
 		<div class="empty-call">
