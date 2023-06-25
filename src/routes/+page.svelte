@@ -5,12 +5,9 @@
 	$: searchResults = [];
 
 	const getSearchResults = async (query) => {
-		// let data = await fetch(`https://spotify-endpoints.15adityagaikwad.repl.co/search/${query}`);
 		let data = await fetch(`/api/search?query=${query}`);
 		data = await data.json();
 		searchResults = data;
-		console.log(searchResults);
-		// return data;
 	};
 
 	const searchCallback = () => {
