@@ -23,11 +23,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"youtube-api": "^3.0.1",
-		"youtube-search": "^1.1.6",
-		"youtube-search-without-api-key": "^1.1.0",
 		"youtubei.js": "^2.5.3",
-		"ytcog": "^2.4.3",
-		"ytdl-core": "^4.11.2"
+		"ytdl-core": "^4.11.4",
+		"ytmusic-api": "^4.1.0"
 	}
 }

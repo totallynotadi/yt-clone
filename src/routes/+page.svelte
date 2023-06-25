@@ -1,10 +1,12 @@
 <script>
 	import VideoCard from '$lib/VideoCard.svelte';
+
 	let query = '';
-	let searchResults = [];
+	$: searchResults = [];
 
 	const getSearchResults = async (query) => {
-		let data = await fetch(`https://spotify-endpoints.15adityagaikwad.repl.co/search/${query}`);
+		// let data = await fetch(`https://spotify-endpoints.15adityagaikwad.repl.co/search/${query}`);
+		let data = await fetch(`/api/search?query=${query}`);
 		data = await data.json();
 		searchResults = data;
 		console.log(searchResults);
@@ -14,7 +16,7 @@
 	const searchCallback = () => {
 		console.log(query);
 		let data = getSearchResults(query);
-		// searchResults = data;
+		searchResults = data;
 	};
 </script>
 
@@ -35,7 +37,7 @@
 
 	{#if searchResults.length > 0}
 		{#each searchResults as result}
-			<a href="/watch/{result.id}">
+			<a href="/watch/{result.id}" style:width="90%">
 				<VideoCard videoData={result} />
 			</a>
 		{/each}
